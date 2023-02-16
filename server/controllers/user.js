@@ -1,6 +1,5 @@
 import User from "../models/User.js";
 
-// Getting the
 export async function getUser(req, res) {
   try {
     const { id } = req.params;
@@ -56,6 +55,7 @@ export async function addRemoveFriend(req, res) {
       user.friends.push(friendId);
       friend.friends.push(id);
     }
+
     await user.save();
     await friend.save();
 
